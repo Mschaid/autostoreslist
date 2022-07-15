@@ -3,10 +3,8 @@ import glob
 import shutil
 import streamlit as st
 
-"""
 
-Functions for creating directories and managment
-"""
+# Functions for creating directories and managment
 
 
 def create_new_dir(file_path, new_dir_ext):
@@ -24,18 +22,16 @@ def list_subdirs(directory):
     return [os.path.join(directory, file) for file in os.listdir(directory)]
 
 
-"""
-User input prompts 
-"""
+# User input prompts
+
 path_to_files = st.text_input("Enter path to photometry folder")
 master_stores_list = st.text_input("Enter path to master stores list")
 file_remove_ext = st.text_input(
-    "Enter file name to remove (Enter 'None' to bypass")
+    "Enter file name to remove (Enter 'None' to bypass)")
 
 
-""""
-streamlit waits for submit button to run
-"""
+# streamlit waits for submit button to run
+
 with st.form("my_form"):
 
     # Every form must have a submit button.
