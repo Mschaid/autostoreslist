@@ -37,9 +37,9 @@ with st.form("my_form"):
     submitted = st.form_submit_button("Submit")
     if submitted:
 
-        path_to_files = repr(path_to_files).replace("'", "")
-        master_stores_list = repr(master_stores_list).replace("'", "")
-        file_remove_ext = repr(file_remove_ext).replace("'", "")
+        path_to_files = (path_to_files).replace("'", "")
+        master_stores_list = (master_stores_list).replace("'", "")
+        file_remove_ext = (file_remove_ext).replace("'", "")
         # files_to_remove = repr(files_to_remove)
 
         sub_dirs = list_subdirs(path_to_files)
@@ -63,4 +63,3 @@ with st.form("my_form"):
                 print("file removed")
             else:
                 print("file not found")
-
