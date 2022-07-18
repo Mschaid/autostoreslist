@@ -1,3 +1,4 @@
+
 import os
 import glob
 import shutil
@@ -28,8 +29,6 @@ path_to_files = st.text_input("Enter path to photometry folder")
 master_stores_list = st.text_input("Enter path to master stores list")
 file_remove_ext = st.text_input(
     "Enter file name to remove (Enter 'None' to bypass)")
-
-
 # streamlit waits for submit button to run
 
 with st.form("my_form"):
@@ -38,8 +37,10 @@ with st.form("my_form"):
     submitted = st.form_submit_button("Submit")
     if submitted:
 
-        print(path_to_files)
-        print(master_stores_list)
+        path_to_files = repr(path_to_files).replace("'", "")
+        master_stores_list = repr(master_stores_list).replace("'", "")
+        file_remove_ext = repr(file_remove_ext).replace("'", "")
+        # files_to_remove = repr(files_to_remove)
 
         sub_dirs = list_subdirs(path_to_files)
 
@@ -62,3 +63,4 @@ with st.form("my_form"):
                 print("file removed")
             else:
                 print("file not found")
+
